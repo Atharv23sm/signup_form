@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background: url('back.jpg');
+            background-size: cover;
+            color: #000000;
+        }
+
+        #form {
+            margin: 3% auto;
+            width: 420px;
+            height: 590px;
+            background-color: #c0cafb;
+            text-align: left;
+            font-family: 'montserrat';
+            padding: 20px 0;
+            box-shadow: 0px 5px 30px #000000;
+        }
+
+        #form p,h1 {
+            margin-left: 14%;
+        }
+
+        input {
+            border: 1px solid #1025c0;
+            width: 280px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #submit {
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #1833fe;
+            color: white;
+            transition: 0.5s;
+            margin-left: 60px;
+        }
+
+        #submit:hover {
+            background-color: #2053fa;
+            cursor: pointer;
+        }
+
+        i {
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 440px) {
+
+            #form {
+                width: 80%;
+                margin-top: 10%;
+            }
+
+            input {
+                width: 78%;
+            }
+
+            #submit {
+                width: 72%;
+                margin-left: 11vw;
+            }
+        }
+    </style>
+
+    <script>
+        function showPassword() {
+            var pass= document.getElementById("password");
+            if (pass.type === "password") {
+                pass.type = "text";
+            } else {
+                pass.type = "password";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="form">
+        <h1>Sign Up</h1>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+        <form action="signup.php" method="post">
+            <p>Firstname <br><input type="text" name="firstname" required><br><br>
+                Lastname <br><input type="text" name="lastname"><br><br>
+                Username <br><input type="text" name="user" maxlength=20 required><br><br>
+                Phone Number <br><input type="tel" name="phone" maxlength="10" required><br><br>
+                Password <br><input type="password" name="pass" id="password" maxlength="8" required>
+                <i class="fa fa-eye" onclick="showPassword()"></i><br><br>
+            </p>
+            <input type="submit" value="Sign Up" id="submit">
+        </form>
+    </div>
+</body>
+
+</html>
